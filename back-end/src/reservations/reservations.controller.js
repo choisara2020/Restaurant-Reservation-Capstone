@@ -61,6 +61,7 @@ function hasValidFields(req, res, next) {
 /**
  * Check "isValidNumber" handler for reservation resources
  */
+
 function isValidNumber(req, res, next) {
   const { data = {} } = req.body;
 
