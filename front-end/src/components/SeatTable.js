@@ -5,11 +5,13 @@ import { useHistory, useParams } from "react-router";
 import { listTables, seatTable } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 
+//seat table
 export default function SeatTable() {
   const history = useHistory();
   const { reservation_id } = useParams();
   const resId = Number(reservation_id);
 
+  //need 3 useStates..
   const [tableId, setTableId] = useState("");
   const [updateTableError, setUpdateTableError] = useState(null);
 
