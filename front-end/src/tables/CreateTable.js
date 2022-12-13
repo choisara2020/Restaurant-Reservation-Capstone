@@ -2,6 +2,7 @@ import React from "react";
 
 import TableForm from "./TableForm";
 
+//create table
 export default function CreateTable() {
   return (
     <>

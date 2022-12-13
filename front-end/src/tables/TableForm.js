@@ -6,10 +6,12 @@ import { useHistory } from "react-router-dom";
 import { createTable } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 
+//table form
 export default function FormTable() {
   const history = useHistory();
   const [error, setError] = useState(null);
 
+  //empty form
   const initialState = {
     table_name: "",
     capacity: 0,
