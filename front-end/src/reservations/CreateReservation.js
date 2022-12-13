@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 
-// show reservation form
+// show reservation form: 
 import { createReservation } from "../utils/api";
 import NewReservationForm from "./NewReservationForm";
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
+//new reservation form
 function NewReservationForm({ reservation, setReservation, submitHandler }) {
   const history = useHistory();
 

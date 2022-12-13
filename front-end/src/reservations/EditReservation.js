@@ -4,11 +4,12 @@ import { updateReservation, readReservation } from "../utils/api";
 import { useParams, useHistory } from "react-router-dom";
 import ErrorAlert from "../layout/ErrorAlert";
 
+//edit reservation
 function EditReservation() {
   const history = useHistory();
 
   const { reservation_id } = useParams();
-
+//clear form
   const initialState = {
     first_name: "",
     last_name: "",
