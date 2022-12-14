@@ -27,7 +27,7 @@ import NotFound from "./NotFound";
 export default function Routes() {
   const query = useQuery();
   const date = query.get("date");
-
+console.log("routes.js", date)
   return (
     <Switch>
       <Route exact={true} path="/">
