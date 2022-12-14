@@ -25,7 +25,7 @@ export default function Dashboard({ date }) {
   // getting the current day in YYYY-MM-DD format
   const today = new Date().toJSON().slice(0, 10);
 
-console.log("dashboard.js", dateQuery)
+//console.log("dashboard.js", dateQuery)
 
   const [dashDate, setDashDate] = useState(dateQuery ? dateQuery : today);
 
