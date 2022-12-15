@@ -35,8 +35,8 @@ router
 //home
   router
   .route("/")
-  .post(controller.create)
   .get(controller.list)
+  .post(controller.create)
   .all(methodNotAllowed);
 
 module.exports = router;
