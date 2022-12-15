@@ -29,6 +29,13 @@ headers.append("Content-Type", "application/json");
  *  a promise that resolves to the `json` data or an error.
  *  If the response is not in the 200 - 399 range the promise is rejected.
  */
+
+
+//abort controller
+const abortController = new AbortController()
+
+
+
 async function fetchJson(url, options, onCancel) {
   try {
     const response = await fetch(url, options);
@@ -63,7 +70,7 @@ export async function listReservations(params, signal) {
   Object.entries(params).forEach(([key, value]) =>
     url.searchParams.append(key, value.toString())
   );
-  return await fetchJson(url, { headers, signal }, [])
+  return await fetchJson(url, { headers, signal }, abortController.signal)
     .then(formatReservationDate)
     .then(formatReservationTime);
 }
@@ -84,7 +91,7 @@ export async function createReservation(reservation, signal) {
 //module 39 we love movies frontend api.js
 export async function readReservation(reservation_id, signal) {
   const url = new URL(`${API_BASE_URL}/reservations/${reservation_id}`);
-  return await fetchJson(url, { headers, signal }, [])
+  return await fetchJson(url, { headers, signal }, abortController.signal)
     .then(formatReservationDate)
     .then(formatReservationTime);
 }
@@ -95,7 +102,7 @@ export async function finishTable(table_id) {
     method: "DELETE",
     headers,
   };
-  return await fetchJson(url, options, {});
+  return await fetchJson(url, options, abortController.signal);
 }
 
 export async function cancelReservation(status, reservation_id, signal) {
@@ -110,7 +117,7 @@ export async function cancelReservation(status, reservation_id, signal) {
     }),
     signal,
   };
-  return await fetchJson(url, options, {});
+  return await fetchJson(url, options, abortController.signal);
 }
 
 // should we change res id
@@ -122,14 +129,14 @@ export async function updateReservation(reservationId, reservation, signal) {
     body: JSON.stringify({ data: reservation }),
     signal,
   };
-  return await fetchJson(url, options, {});
+  return await fetchJson(url, options, abortController.signal);
 }
 
 //table api handlers
 export async function listTables(signal) {
   const url = new URL(`${API_BASE_URL}/tables`);
 
-  return await fetchJson(url, { headers, signal }, []);
+  return await fetchJson(url, { headers, signal }, abortController.signal);
 }
 
 export async function createTable(table, signal) {
