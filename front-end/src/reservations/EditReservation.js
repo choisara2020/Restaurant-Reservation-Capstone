@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import NewReservationForm from "./NewReservationForm";
+import NewReservationForm from "./ReservationForm";
 import { updateReservation, readReservation } from "../utils/api";
 import { useParams, useHistory } from "react-router-dom";
 import ErrorAlert from "../layout/ErrorAlert";

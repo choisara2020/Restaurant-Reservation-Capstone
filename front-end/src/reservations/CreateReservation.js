@@ -4,7 +4,7 @@ import ErrorAlert from "../layout/ErrorAlert";
 
 // show reservation form: 
 import { createReservation } from "../utils/api";
-import NewReservationForm from "./NewReservationForm";
+import NewReservationForm from "./ReservationForm";
 
 function CreateReservation() {
   const history = useHistory();
