@@ -98,6 +98,7 @@ export default function Dashboard({ date }) {
             <th scope="col">TIME</th>
             <th scope="col">PEOPLE</th>
             <th scope="col">STATUS</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{reservationList}</tbody>

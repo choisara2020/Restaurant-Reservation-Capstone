@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import NewReservationForm from "./ReservationForm";
+import ReservationForm from "./ReservationForm";
 import { updateReservation, readReservation } from "../utils/api";
 import { useParams, useHistory } from "react-router-dom";
 import ErrorAlert from "../layout/ErrorAlert";
@@ -59,7 +59,7 @@ function EditReservation() {
       <ErrorAlert error={error} />
       <ErrorAlert error={reservationsError} />
       <h1>Edit a New Reservation</h1>
-      <NewReservationForm
+      <ReservationForm
         reservation={reservation}
         setReservation={setReservation}
         submitHandler={submitHandler}

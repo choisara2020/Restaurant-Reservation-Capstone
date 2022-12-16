@@ -51,21 +51,21 @@ export default function Reservations({ reservation, loadDashboard }) {
               <a
                 href={`/reservations/${reservation_id}/seat`}
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-primary btn-block"
               >
                 Seat
               </a>
               <a
                 href={`/reservations/${reservation_id}/edit`}
                 type="button"
-                className="btn btn-secondary mx-2"
+                className="btn btn-secondary btn-block"
               >
                 Edit
               </a>
               <button
                 data-reservation-id-cancel={reservation.reservation_id}
                 type="button"
-                className="btn btn-warning mx-2"
+                className="btn btn-warning btn-block"
                 onClick={handleCancel}
               >
                 Cancel

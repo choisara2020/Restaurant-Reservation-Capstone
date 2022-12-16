@@ -4,7 +4,7 @@ import ErrorAlert from "../layout/ErrorAlert";
 
 // show reservation form: 
 import { createReservation } from "../utils/api";
-import NewReservationForm from "./ReservationForm";
+import ReservationForm from "./ReservationForm";
 
 function CreateReservation() {
   const history = useHistory();
@@ -37,7 +37,7 @@ function CreateReservation() {
     <main>
       <ErrorAlert error={error} />
       <h1>Create a New Reservation</h1>
-      <NewReservationForm
+      <ReservationForm
         reservation={reservation}
         setReservation={setReservation}
         submitHandler={submitHandler}
